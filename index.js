@@ -48,8 +48,15 @@ export const burger = {
   category: "Lunch", 
   burger.discount('')
 }
-burger.discount()
 
+burger.discount = function (str) {
+  if (str === "teacher" || str === "student") {
+    return burger.price * 0.75;
+  } else {
+    return burger.price * 0.9;
+  }
+};
+burger.discount("teacher");
 
 ///////////////Reviews (MVP)///////////////////
 const reviews = [
@@ -180,10 +187,17 @@ Use the carMaker function below to do the following:
 */
 
 
-function carMaker(/* code here */) {
-    /* code here */
+function carMaker(odometer) {
+    const carOne = {
+      speed: odometer,
+      drive: function (distance){
+        return (this.speed = this.speed + distance);
+      }
+     
+    }
     
 }
+console.log(odometer);
 
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
